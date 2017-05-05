@@ -1,0 +1,732 @@
+<html>
+<head>
+	<title>Test</title>
+
+<style type="text/css">
+
+	#container{
+		background: lightblue;
+		width:1000px;
+		height:550px;
+	}
+</style>
+</head>
+<body>
+	<div id='container'>
+	</div>
+
+
+<script type = "text/javascript">
+
+/*Chapter 1 - Fundamentals - pg 20*/
+
+// function countdown(num){
+//     var arr = [];
+//     var count = num;
+//     for (var i = 0; i <= num; i++){
+//         arr[i] = count;
+//         count--;
+//     }
+//     return arr;
+// }
+// console.log(countdown(5));
+
+// print the first item and return the second
+// var arr = [3,6];
+// function printAndReturn(arr){
+//     console.log(arr[0]);
+//     return arr[1];
+// }
+// console.log(printAndReturn(arr));
+
+// first value + len of array
+// var arr = [true,4,8,1,9];
+// function firstPlusLength(arr){
+//     return arr[0] + arr.length;
+// }
+// console.log(firstPlusLength(arr));
+
+// print values greater than second value, return how many this is
+// var arr = [5,2,6,8,1]
+// function valuesGreater(arr){
+//     var sec = arr[1];
+//     var howmany = 0;
+//     for (var i = 0; i < arr.length; i++){
+//         if (arr[i] > sec){
+//             console.log(arr[i]);
+//             howmany++;
+//         }
+//     }
+//     return howmany;
+// }
+// console.log(valuesGreater(arr));
+
+// given an array, return new array w values greater than 2nd
+// consider 1-element array
+// var arr = [2,0,1,5,5]
+// function valuesGreaterGen(arr){
+//     var arrnew = [];
+//     var howmany = 0;
+//     if (arr.length > 1){
+//         var sec = arr[1];
+//         for (var i = 0; i < arr.length; i++){
+//             if (arr[i] > sec){
+//                 arrnew.push(arr[i]);
+//                 howmany++;
+//             }
+//         }
+//     }else{
+//         arrnew = arr;
+//         console.log (howmany+1);
+//     }
+//     return arrnew;
+// }
+// console.log(valuesGreaterGen(arr));
+
+// given 2 nums, return array of length num1 with each value num2
+// print "Jinx!"" if they are the same"
+// function thisLengthThatValue(num1, num2){
+//     if (num1 == num2){
+//         console.log("Jinx!");
+//     }
+//     var arr = [];
+//     for (var i = 0; i < num1; i++){
+//         arr[i] = num2;
+//     }
+//     return arr;
+// }
+// console.log(thisLengthThatValue(2,2));
+
+// given an array, if [0] > than length, print "Too big!"
+// if  [0] < array length, print "Too small!"
+// otherwise print "Just right!"
+// var arr = [3,2,3];
+// function fitTheFirstValue(arr){
+//     if (arr[0] > arr.length){
+//         console.log("Too big!");
+//     }else if (arr[0] < arr.length){
+//         console.log("Too small!");
+//     }else{
+//         console.log("Just right!");
+//     }
+// }
+// console.log(fitTheFirstValue(arr));
+
+// function fahrenheitToCelcius(num){
+//     return((num - 32)*(5/9));
+// }
+// console.log(fahrenheitToCelcius(-40));
+
+/*Chapter 2 - Fundamentals - pg 29*/
+// function sigma(num){
+//     var sum = 1;
+//     for (var i = 2; i <= num; i++){
+//         sum += i;
+//     }
+//     return sum;
+// }
+// console.log(sigma(5));
+
+// star art
+// var num = 25;
+// function drawLeftStars(num){
+//     var line = '';
+//     for (var i = 1; i <= num; i++){
+//         line += '*';
+//     }
+//     console.log(line);
+// }
+// function drawRightStars(num){
+//     var line = ''
+//     var spaces = 75 - num;
+//     for (var i = 1; i <= spaces; i++){
+//         line += ' ';
+//     }
+//     for (var i = 1; i <= num; i++){
+//         line += '*';
+//     }
+//     console.log(line);
+// }
+// // i guess we have to assume that num isn't even
+// // since an even num in an odd space cant be sentered
+// function drawCenteredStars(num){
+//     var spaces = (75-num)/2;
+//     var line = '';
+//     for (var i = 1; i <= spaces; i++){
+//         line += ' ';
+//     }
+//     for (var i = 1; i <= num; i++){
+//         line += '*';
+//     }
+//     for (var i = 1; i <= spaces; i++){
+//         line += ' ';
+//     }
+//     console.log(line);
+// }
+// drawLeftStars(num);
+// drawRightStars(num);
+// drawCenteredStars(num);
+
+// function threesFives(num1, num2){
+// 	var sum = 0;
+//     for (var i = num1; i <= num2; i++){
+// 		if (i%3 == 0 && i%5 == 0){
+// 			sum += i;
+// 		}
+// 	}
+// 	return sum;
+// }
+// console.log(threesFives(100,200));
+
+// function generateCoinChange(cents){
+// 	var change = cents;
+// 	var c = cents;
+
+// 	var dollars = 0;
+// 	var quarters = 0; 
+// 	var dimes = 0;
+// 	var nickles = 0;
+// 	var pennies = 0;
+
+// 	var dollar = 100;
+// 	var quarter = 25;
+// 	var dime = 10;
+// 	var nickle = 5;
+// 	var penny = 1;
+
+// 	// find how many dollar bills
+// 	change = change%dollar;
+// 	dollars = (cents - change)/dollar;
+// 	// find how many quarters
+// 	c = change;
+// 	change = change%quarter;
+// 	quarters = (c - change)/quarter;
+// 	// find how many dimes
+// 	c = change;
+// 	change = change%dime;
+// 	dimes = (c - change)/dime;
+// 	// find how many nickles
+// 	c = change;
+// 	change = change%nickle;
+// 	nickles = (c - change)/nickle;
+// 	// find how many pennies
+// 	pennies = change;
+
+// 	console.log(cents+" cents can be represented by:");
+// 	console.log("dollars: "+dollars);
+// 	console.log("quarters: "+quarters);
+// 	console.log("dimes: "+dimes);
+// 	console.log("nickles: "+nickles);
+// 	console.log("pennies: "+pennies);
+// }
+// generateCoinChange(94);
+
+// function messyMath(num){
+// 	var sum = 0;
+// 	for(var i = 0; i <= num; i++){
+// 		if(i == num/3){
+// 			return -1
+// 		}else if(i%3 == 0){
+// 			continue;
+// 		}else if(i%7 == 0){
+// 			sum += 2*i;
+// 		}else{
+// 			sum += i;
+// 		}
+// 	}
+// 	return sum;
+// }
+// console.log(messyMath(8));
+
+// function fibonacci(num){
+// 	var fib = [0,1];
+// 	var fibnew = 0;
+// 	for (var i = 1; i < num; i++){
+// 		fibnew = fib[i]+fib[i-1];
+// 		fib.push(fibnew);
+// 	}
+// 	console.log(fib);
+// 	return fib[num];
+// }
+// console.log(fibonacci(7));
+
+
+/* LONG SUM TO ONE
+// returns the largest place of given number
+// ex: return 1000 given 5950
+function largestPlace(num){
+	var place = 1;
+	if (num%10 != 0){
+		while (place < num){
+			place *= 10;
+		}
+		place /= 10;
+	}else{
+		while (place < num){
+			place *= 10;
+		}
+	}
+	return place;
+}
+// returns the digit at the given place of given num
+// ex: returns 4 given (54321, 1000)
+function numAtPlace(num, place){
+	var digit = Math.floor(num)/place;
+	while(largestPlace(digit) > 1){
+		digit -= largestPlace(digit);
+	}
+	digit = Math.floor(digit);
+	return digit;
+}
+// returns the sum of the digits
+// ex: returns 7 if given 34
+function sumDigits(num){
+	var sum = 0;
+	for (var i = 1; i <= largestPlace(num); i*=10){
+		sum += numAtPlace(num, i);
+	}
+	return sum;
+}
+// keeps adding digits of given number together
+// until we have only a digit in the ones place
+function sumToOneDigit(num){
+	var place = 1;
+	var sum = sumDigits(num, place);
+
+	while (largestPlace(sum) >= 10){
+		sum = sumDigits(sum);
+	}
+	return sum;
+}
+console.log(sumToOneDigit(2913821902));
+// should print "1" to console
+*/
+
+// extract the last digit and add to sum
+// keep repeating this until sum is in 1's place
+
+// function sumToOne(num){
+// 	var sum = num%10;
+// 	var short = Math.floor(num/10);
+// 	console.log(short);
+
+// 	while (short >= 10){
+// 		sum += short%10;
+// 		short = Math.floor(short/10);
+// 	}
+// 	sum += short;
+	
+// 	return sum;
+// }
+// console.log(sumToOne(928));
+
+// function clockHandAngles(seconds){
+// 	var secondhold = seconds;
+// 	var s = 0;
+
+// 	var secs_per_hour = 3600;
+// 	var secs_per_min = 60;
+// 	var secs_per_sec = 1;
+
+// 	var hours = 0;
+// 	var mins = 0;
+// 	var secs = 0;
+
+// 	// while ((secondhold-secs_per_hour) >= 0){
+// 	// 	secondhold -= secs_per_hour;
+// 	// 	hours++;
+// 	// }
+// 	// while ((secondhold-secs_per_min) >= 0){
+// 	// 	secondhold -= secs_per_min;
+// 	// 	mins++
+// 	// }
+// 	// secs = secondhold;
+
+// 	//find how many hours
+// 	var count = 0;
+// 	secondhold = seconds%secs_per_hour;
+// 	hours = (seconds - secondhold)/secs_per_hour;
+// 	while (hours > 12){
+// 		hours -= 12;
+// 		count++;
+// 	}
+// 	//find how many minutes
+// 	s = secondhold;
+// 	secondhold = seconds%secs_per_min;
+// 	mins = (s - secondhold)/secs_per_min;
+// 	//find how many seconds
+// 	secs = secondhold;
+
+// 	var hour_degs = (hours + mins/60 + secs/3600)*30;
+// 	var min_degs = (mins + secs/60)*6;
+// 	var sec_degs = secs*.1;
+
+// 	console.log(hours," hours");
+// 	console.log(mins," mins");
+// 	console.log(secs," seconds");
+// 	console.log(hour_degs);
+// 	console.log(min_degs);
+// 	console.log(sec_degs);
+// }
+// clockHandAngles(119730);
+
+// function isPrime(num){
+// 	for (var i = 2; i < num; i++){
+// 		if (num%i == 0){
+// 			console.log(num%i);
+// 			return false;
+// 		}
+// 	}
+// 	return true;
+// }
+// console.log(isPrime(7));
+
+// function dojoSweatShirt(num){
+// 	var base = num*20;
+// 	if (num >= 4){
+// 		return Math.ceil(base-base*.35);
+// 	}else if (num == 3){
+// 		return Math.ceil(base-base*.19);
+// 	}else if (num == 2){
+// 		return Math.ceil(base-base*.09);
+// 	}else{
+// 		return base;
+// 	}
+// }
+// for (var i = 1; i < 5; i++){
+// 	console.log(dojoSweatShirt(i));
+// }
+
+// function rollOne(){
+// 	return (Math.floor(Math.random()*10)%6+1);
+// }
+// function playFives(num){
+// 	var val = 0;
+// 	for (var i = 1; i <= num; i++){
+// 		val = rollOne();
+// 		console.log(val);
+
+// 		if (val == 5){
+// 			console.log("That's good luck!");
+// 		}
+// 	}
+// }
+// function playStatistics(){
+// 	var arr = [];
+// 	for (var i = 1; i <= 8; i++){
+// 		arr.push(rollOne());
+// 	}
+// 	var min = arr[0];
+// 	var max = arr[0];
+// 	for (var i = 0; i < arr.length; i++){
+// 		if (min > arr[i]){
+// 			min = arr[i];
+// 		}
+// 		if (max < arr[i]){
+// 			max = arr[i];
+// 		}
+// 	}
+// 	console.log(arr);
+// 	console.log(min);
+// 	console.log(max);
+// }
+// function playStatistics2(){
+// 	var arr = [];
+// 	for (var i = 1; i <= 8; i++){
+// 		arr.push(rollOne());
+// 	}
+// 	var min = arr[0];
+// 	var max = arr[0];
+// 	var sum = 0;
+// 	for (var i = 0; i < arr.length; i++){
+// 		if (min > arr[i]){
+// 			min = arr[i];
+// 		}
+// 		if (max < arr[i]){
+// 			max = arr[i];
+// 		}
+// 		sum += arr[i];
+// 	}
+// 	console.log(arr);
+// 	console.log(min);
+// 	console.log(max);
+// 	console.log(sum);
+// }
+// function playStatistics3(num){
+// 	var arr = [];
+// 	for (var i = 1; i <= num; i++){
+// 		arr.push(rollOne());
+// 	}
+// 	var min = arr[0];
+// 	var max = arr[0];
+// 	var sum = 0;
+// 	for (var i = 0; i < arr.length; i++){
+// 		if (min > arr[i]){
+// 			min = arr[i];
+// 		}
+// 		if (max < arr[i]){
+// 			max = arr[i];
+// 		}
+// 		sum += arr[i];
+// 	}
+// 	console.log(arr);
+// 	console.log(min);
+// 	console.log(max);
+// 	console.log(sum);
+// }
+// function playStatistics4(num){
+// 	var arr = [];
+// 	for (var i = 1; i <= num; i++){
+// 		arr.push(rollOne());
+// 	}
+// 	var min = arr[0];
+// 	var max = arr[0];
+// 	var sum = 0;
+// 	for (var i = 0; i < arr.length; i++){
+// 		if (min > arr[i]){
+// 			min = arr[i];
+// 		}
+// 		if (max < arr[i]){
+// 			max = arr[i];
+// 		}
+// 		sum += arr[i];
+// 	}
+// 	var avg = sum/arr.length;
+// 	console.log(arr);
+// 	console.log(min);
+// 	console.log(max);
+// 	console.log(sum);
+// 	console.log(avg);
+// }
+// playStatistics4(10);
+
+function extractDigit(num, place){
+
+	if (place >= 0) {
+		var hold = Math.pow(10,place);
+		return Math.floor(num/hold%10);
+	}else if (place < 0){
+		var hold = Math.pow(10,Math.abs(place));
+		return Math.floor(num*hold%10)
+	}
+}
+// console.log(extractDigit(54321.2, 5));
+
+// function significant(num){
+// 	var place = 1;
+// 	var curr = num/place%10;
+// 	var digit = Math.floor(curr);
+
+// 	var breakit = 1;
+// 	num = Math.abs(num);
+
+// 	if (Math.abs(num) > 1){
+// 		while (breakit < 100){
+// 		// 	console.log("here");
+
+// 			curr = num/place;
+// 			digit = Math.floor(curr%10);
+// 			console.log("digit ",digit);
+// 			console.log("curr, ",curr);
+// 			if (curr > 0 && curr < 1){
+// 				return Math.floor(curr*10);
+// 			}
+// 			breakit++;
+// 			// end loop if number has more than 1000 places
+// 			if (breakit == 100){
+// 				return "number too large";
+// 			}
+// 			place *= 10;
+// 		}
+// 		return curr;
+// 	}else if (num < 1){
+// 		place = -1;
+// 		while (digit == 0 && breakit < 1000){
+// 			curr = Math.abs(num*place);
+// 			if (curr < 1){
+// 				curr = 0;
+// 			}
+// 			digit = Math.floor(curr%10);
+// 			if (digit !== 0){
+// 				return digit;
+// 			}
+// 			breakit++;
+// 			// end loop if number has more than 100 zero places
+// 			if (breakit == 100){
+// 				return "number too small";
+// 			}
+// 			place *= -10;
+// 		}
+// 	}
+// }
+
+// function d20(){
+// 	return Math.floor(Math.random()*20+1);
+// }
+// function untilDouble(){
+// 	var arr = [];
+// 	var i = 1;
+// 	var breakit = 0;
+// 	arr[0] = d20();
+// 	arr[1] = d20();
+
+// 	while (arr[i] != arr[i-1] && breakit < 500){
+// 		arr[i+1] = d20();
+// 		breakit++;
+// 		i++;
+// 	}
+// 	var min = arr[0];
+// 	var max = arr[0];
+// 	var sum = 0;
+// 	for (var i = 0; i < arr.length; i++){
+// 		if (min > arr[i]){
+// 			min = arr[i];
+// 		}
+// 		if (max < arr[i]){
+// 			max = arr[i];
+// 		}
+// 		sum += arr[i];
+// 	}
+// 	console.log(arr);
+// 	var avg = sum/arr.length;
+// 	console.log("number of rolls: ",arr.length);
+// 	console.log("minimum: ", min);
+// 	console.log("maximum: ",max);
+// 	console.log("average: ",avg);
+// }
+// untilDouble();
+
+// var claire = {
+// 	x: 0,
+// 	y: 0
+// }
+// function reset(){
+// 	claire.x = 0;
+// 	claire.y = 0;
+// }
+// function moveBy(xOffset, yOffset){
+// 	claire.x += xOffset;
+// 	claire.y += yOffset;
+// }
+// function xLocation(){
+// 	return claire.x;
+// }
+// function yLocation(){
+// 	return claire.y;
+// }
+// function distFromHome(){
+// 	return Math.sqrt(Math.pow(claire.x,2)+Math.pow(claire.y,2));
+// }
+// reset();
+// moveBy(1,-2);
+// moveBy(3,1);
+// console.log(xLocation());
+// console.log(yLocation());
+// console.log(distFromHome());
+
+function weekdayName(weekdayNum){
+	if (weekdayNum == 1){
+		return "Sunday";
+	}else if(weekdayNum == 2){
+		return "Monday";
+	}else if(weekdayNum == 3){
+		return "Tuesday";
+	}else if(weekdayNum == 4){
+		return "Wednesday";
+	}else if(weekdayNum == 5){
+		return "Thursday";
+	}else if(weekdayNum == 6){
+		return "Friday";
+	}else if(weekdayNum == 7){
+		return "Saturday";
+	}
+}
+function weekdayName2(dayNum){
+	while(dayNum > 7){
+		dayNum -= 7;
+	}
+	return weekdayName(dayNum);
+}
+function isWeekday(dayNum){
+	while(dayNum > 7){
+		dayNum -= 7;
+	}
+	if (dayNum > 1 && dayNum < 7){
+		return true;
+	}else{
+		return false;
+	}
+}
+function someDays(){
+	var day = "";
+	for (var i = 1; i <= 17; i++){
+		day = Math.floor(Math.random()*365);
+		weekdayName2(day);
+		if (isWeekday(day)){
+			console.log("Work hard!");
+		}else{
+			console.log("Enjoy your day off!")
+		}
+	}
+}
+function monthName(monthNum){
+	var year = ["January","February","March","April","May","June","July","August","September","October","November","December",]
+	if (monthNum <=12){
+		monthNum -= 1;
+		return year[monthNum];
+	}else{
+		return "error: "+monthNum+"th month does not exist";
+	}
+}
+function monthToDays(monthNum){
+	// 28 days in february
+	if (monthNum == 2){
+		return 28;
+	} 
+	//  30 days hath sept, aprl, june, novb
+	else if (monthNum == 9 || monthNum == 4 || monthNum == 6 || monthNum == 11){
+		return 30;
+	}
+	// all the rest have 31
+	else if (monthNum == 1 || monthNum == 3 || monthNum == 5 || monthNum == 7 || monthNum == 8 || monthNum == 10 || monthNum == 12){
+		return 31;
+	}
+	// invalid month
+	else{
+		return null;
+	}
+}
+function dayToMonth(dayNum){
+	var year = [31,28,31,30,31,30,31,31,30,31,30,31]
+	for (var i = 0; i < year.length; i++){
+		if ((dayNum - year[i]) <= 0){
+			return monthName(i+1);
+		}else{
+			dayNum -= year[i];
+		}
+	}
+}
+function dayToDate(dayNum){
+	var year = [31,28,31,30,31,30,31,31,30,31,30,31]
+	for (var i = 0; i < year.length; i++){
+		if ((dayNum - year[i]) <= 0){
+			return dayNum;
+		}else{
+			dayNum -= year[i];
+		}
+	}
+}
+function fullDate(dayNum){
+	var fullDate = weekdayName2(dayNum) + ", " + dayToMonth(dayNum) + " " + dayToDate(dayNum) + ", 2017";
+	return fullDate;
+}
+function fullDate2(dayNum){
+	
+}
+
+
+
+</script>
+
+</body>
+</html>
